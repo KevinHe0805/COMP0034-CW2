@@ -1,0 +1,51 @@
+<style>
+.navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Price of oil and gas Predictor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('index')}}">Home</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/dashboard/" id="dashboard">Dashboard</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('predicted')}}">Prediction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('price_list') }}">Oil and gas data set</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+    <ul class="navbar-nav justify-content-end">
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('register')}}">SignUp</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+        </li>
+        {% endif %}
+    </ul>
+
+</nav>

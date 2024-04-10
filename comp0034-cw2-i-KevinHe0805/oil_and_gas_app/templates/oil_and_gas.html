@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% set title = 'oil and natural gas Dataset' %}
+{% block content %}
+
+<table>
+    <tr>
+        <th>type</th>
+        <th>date</th>
+        <th>price</th>
+
+    </tr>
+    {% for source in price_list %}
+    <tr>
+        <td>{{source.type}}</td>
+        <td>{{source.Date}}</td>
+        <td>{{source.Price}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

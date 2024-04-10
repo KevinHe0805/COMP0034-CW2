@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block title %}404 Not Found{% endblock %}
+{% block content %}
+<h1>Oops! Page Not Found!</h1>
+<p>What you are looking for is just not there. <a href="{{ url_for('index') }}">Go back to homepage</a>.</p>
+{% endblock %}
